@@ -1,0 +1,112 @@
+{
+  "match_id": "syn-northbridge-harbor-001",
+  "label": "Northbridge FC vs Harbor FC (synthetic)",
+  "competition": "Synthetic Premier Showcase",
+  "venue": "Northbridge Arena",
+  "synthetic": true,
+  "teams": {
+    "home": { "team_id": "northbridge", "name": "Northbridge FC" },
+    "away": { "team_id": "harbor", "name": "Harbor FC" }
+  },
+  "players": [
+    { "player_id": "nb-7", "team_id": "northbridge", "name": "A. Reed", "number": 7 },
+    { "player_id": "nb-9", "team_id": "northbridge", "name": "M. Okonkwo", "number": 9 },
+    { "player_id": "hb-10", "team_id": "harbor", "name": "L. Vargas", "number": 10 },
+    { "player_id": "hb-4", "team_id": "harbor", "name": "J. Klein", "number": 4 }
+  ],
+  "events": [
+    {
+      "event_id": "11111111-1111-1111-1111-111111111101",
+      "match_id": "syn-northbridge-harbor-001",
+      "seq": 0,
+      "match_clock": "0:00",
+      "period": 1,
+      "type": "metadata",
+      "team_id": null,
+      "player_id": null,
+      "payload": { "kickoff": true, "score": { "home": 0, "away": 0 } },
+      "ts": "2026-10-12T18:00:00Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "11111111-1111-1111-1111-111111111102",
+      "match_id": "syn-northbridge-harbor-001",
+      "seq": 1,
+      "match_clock": "3:12",
+      "period": 1,
+      "type": "pass",
+      "team_id": "northbridge",
+      "player_id": "nb-7",
+      "payload": {
+        "to_player_id": "nb-9",
+        "distance_m": 18.4,
+        "accurate": true,
+        "difficulty": 0.42
+      },
+      "ts": "2026-10-12T18:03:12Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "11111111-1111-1111-1111-111111111103",
+      "match_id": "syn-northbridge-harbor-001",
+      "seq": 2,
+      "match_clock": "3:18",
+      "period": 1,
+      "type": "pressure",
+      "team_id": "harbor",
+      "player_id": "hb-4",
+      "payload": { "intensity": 0.78, "zone": "final_third_home" },
+      "ts": "2026-10-12T18:03:18Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "11111111-1111-1111-1111-111111111104",
+      "match_id": "syn-northbridge-harbor-001",
+      "seq": 3,
+      "match_clock": "3:21",
+      "period": 1,
+      "type": "possession_change",
+      "team_id": "harbor",
+      "player_id": "hb-4",
+      "payload": { "from_team_id": "northbridge", "reason": "tackle_pressure" },
+      "ts": "2026-10-12T18:03:21Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "11111111-1111-1111-1111-111111111105",
+      "match_id": "syn-northbridge-harbor-001",
+      "seq": 4,
+      "match_clock": "12:44",
+      "period": 1,
+      "type": "shot",
+      "team_id": "harbor",
+      "player_id": "hb-10",
+      "payload": {
+        "xg": 0.21,
+        "on_target": true,
+        "shot_speed_kmh": 89.2,
+        "body_part": "right_foot",
+        "outcome": "saved"
+      },
+      "ts": "2026-10-12T18:12:44Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "11111111-1111-1111-1111-111111111106",
+      "match_id": "syn-northbridge-harbor-001",
+      "seq": 5,
+      "match_clock": "41:02",
+      "period": 1,
+      "type": "goal",
+      "team_id": "northbridge",
+      "player_id": "nb-9",
+      "payload": {
+        "assist_player_id": "nb-7",
+        "xg": 0.37,
+        "score_after": { "home": 1, "away": 0 }
+      },
+      "ts": "2026-10-12T18:41:02Z",
+      "synthetic": true
+    }
+  ]
+}

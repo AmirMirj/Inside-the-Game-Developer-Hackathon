@@ -1,0 +1,12 @@
+line-length = 100
+target-version = "py312"
+
+[lint]
+select = ["E", "F", "I", "B"]
+ignore = [
+  "E501",  # line length handled loosely for hackathon prompts
+  "B008",  # FastAPI Query defaults in function args
+]
+
+[lint.per-file-ignores]
+"tests/*" = ["B011"]

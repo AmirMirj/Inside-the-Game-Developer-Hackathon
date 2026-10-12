@@ -1,0 +1,13 @@
+---
+description: Python insights-api and agent conventions
+globs: services/insights-api/**/*.py
+alwaysApply: false
+---
+
+# Insights API conventions
+
+- Keep pipeline stages in separate modules: `ingest`, `interpret`, `explain`, `render`, `personalize`, `narrative`.
+- Pydantic models should mirror `packages/schemas` JSON Schema fields.
+- Agent prompts must request structured outputs (headline, why_it_matters, evidence).
+- Prefer dependency-injected Azure OpenAI clients so tests can mock LLM calls.
+- Aggregation logic must be unit-tested against fixtures in `data/synthetic/`.

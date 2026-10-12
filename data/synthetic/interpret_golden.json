@@ -1,0 +1,185 @@
+{
+  "match_id": "syn-interpret-golden",
+  "synthetic": true,
+  "description": "Fixed sequence for Stage B aggregation tests",
+  "events": [
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa01",
+      "match_id": "syn-interpret-golden",
+      "seq": 0,
+      "match_clock": "0:00",
+      "period": 1,
+      "type": "metadata",
+      "team_id": null,
+      "player_id": null,
+      "actors": [],
+      "payload": {
+        "kickoff": true,
+        "score": { "home": 0, "away": 0 },
+        "home_team_id": "northbridge",
+        "away_team_id": "harbor"
+      },
+      "ts": "2026-10-12T18:00:00Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa02",
+      "match_id": "syn-interpret-golden",
+      "seq": 1,
+      "match_clock": "1:00",
+      "period": 1,
+      "type": "pass",
+      "team_id": "northbridge",
+      "player_id": "nb-7",
+      "actors": [
+        { "role": "passer", "player_id": "nb-7", "team_id": "northbridge", "name": "A. Reed" }
+      ],
+      "payload": {
+        "to_player_id": "nb-9",
+        "distance_m": 20.0,
+        "accurate": true,
+        "difficulty": 0.4
+      },
+      "ts": "2026-10-12T18:01:00Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa03",
+      "match_id": "syn-interpret-golden",
+      "seq": 2,
+      "match_clock": "2:00",
+      "period": 1,
+      "type": "pass",
+      "team_id": "northbridge",
+      "player_id": "nb-9",
+      "actors": [
+        { "role": "passer", "player_id": "nb-9", "team_id": "northbridge", "name": "M. Okonkwo" }
+      ],
+      "payload": {
+        "to_player_id": "nb-7",
+        "distance_m": 10.0,
+        "accurate": false,
+        "difficulty": 0.6
+      },
+      "ts": "2026-10-12T18:02:00Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa04",
+      "match_id": "syn-interpret-golden",
+      "seq": 3,
+      "match_clock": "2:30",
+      "period": 1,
+      "type": "pressure",
+      "team_id": "harbor",
+      "player_id": "hb-4",
+      "actors": [
+        { "role": "presser", "player_id": "hb-4", "team_id": "harbor", "name": "J. Klein" }
+      ],
+      "payload": { "intensity": 0.8, "zone": "midfield", "on_team_id": "northbridge" },
+      "ts": "2026-10-12T18:02:30Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa05",
+      "match_id": "syn-interpret-golden",
+      "seq": 4,
+      "match_clock": "3:00",
+      "period": 1,
+      "type": "tackle",
+      "team_id": "harbor",
+      "player_id": "hb-4",
+      "actors": [
+        { "role": "tackler", "player_id": "hb-4", "team_id": "harbor", "name": "J. Klein" }
+      ],
+      "payload": { "won": true, "zone": "midfield" },
+      "ts": "2026-10-12T18:03:00Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa06",
+      "match_id": "syn-interpret-golden",
+      "seq": 5,
+      "match_clock": "4:00",
+      "period": 1,
+      "type": "possession_change",
+      "team_id": "harbor",
+      "player_id": "hb-10",
+      "actors": [
+        { "role": "gains_possession", "player_id": "hb-10", "team_id": "harbor", "name": "L. Vargas" }
+      ],
+      "payload": { "from_team_id": "northbridge", "reason": "tackle_pressure" },
+      "ts": "2026-10-12T18:04:00Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa07",
+      "match_id": "syn-interpret-golden",
+      "seq": 6,
+      "match_clock": "5:00",
+      "period": 1,
+      "type": "shot",
+      "team_id": "harbor",
+      "player_id": "hb-10",
+      "actors": [
+        { "role": "shooter", "player_id": "hb-10", "team_id": "harbor", "name": "L. Vargas" }
+      ],
+      "payload": {
+        "xg": 0.2,
+        "on_target": true,
+        "shot_speed_kmh": 90.0,
+        "outcome": "saved"
+      },
+      "ts": "2026-10-12T18:05:00Z",
+      "synthetic": true
+    },
+    {
+      "event_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa08",
+      "match_id": "syn-interpret-golden",
+      "seq": 7,
+      "match_clock": "6:00",
+      "period": 1,
+      "type": "goal",
+      "team_id": "harbor",
+      "player_id": "hb-10",
+      "actors": [
+        { "role": "scorer", "player_id": "hb-10", "team_id": "harbor", "name": "L. Vargas" }
+      ],
+      "payload": {
+        "score_after": { "home": 0, "away": 1 },
+        "xg": 0.35
+      },
+      "ts": "2026-10-12T18:06:00Z",
+      "synthetic": true
+    }
+  ],
+  "expected_final": {
+    "score": { "home": 0, "away": 1 },
+    "possessing_team_id": "northbridge",
+    "northbridge": {
+      "passes_attempted": 2,
+      "passes_accurate": 1,
+      "pass_accuracy": 50.0,
+      "avg_pass_distance_m": 15.0,
+      "avg_pass_difficulty": 0.5,
+      "shots": 0,
+      "goals": 0
+    },
+    "harbor": {
+      "passes_attempted": 0,
+      "shots": 1,
+      "shots_on_target": 1,
+      "tackles": 1,
+      "tackles_won": 1,
+      "goals": 1
+    },
+    "last_pass_quality": {
+      "distance_m": 10.0,
+      "accurate": false,
+      "difficulty": 0.6,
+      "team_id": "northbridge"
+    },
+    "pressure_current": 0.8,
+    "pressure_sample_count_min": 1
+  }
+}

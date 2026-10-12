@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insidethegame.local/schemas/render_payload.schema.json",
+  "title": "RenderPayload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "render_id",
+    "match_id",
+    "match_clock",
+    "duration_ms",
+    "priority",
+    "overlay_type",
+    "text",
+    "entities"
+  ],
+  "properties": {
+    "render_id": { "type": "string", "format": "uuid" },
+    "insight_id": { "type": ["string", "null"] },
+    "match_id": { "type": "string" },
+    "match_clock": { "type": "string" },
+    "duration_ms": { "type": "integer", "minimum": 0 },
+    "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+    "overlay_type": {
+      "type": "string",
+      "enum": ["lower_third", "moment_card", "recap_block", "ticker"]
+    },
+    "text": {
+      "type": "object",
+      "required": ["headline", "body"],
+      "properties": {
+        "headline": { "type": "string" },
+        "body": { "type": "string" },
+        "why_it_matters": { "type": ["string", "null"] }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": { "type": "string" },
+          "id": { "type": "string" },
+          "name": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "source_event_seq": { "type": ["integer", "null"] },
+    "trigger": { "type": ["string", "null"] },
+    "confidence": { "type": ["number", "null"] },
+    "synthetic": { "type": "boolean", "const": true }
+  }
+}

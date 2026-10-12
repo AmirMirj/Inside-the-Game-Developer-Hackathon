@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insidethegame.local/schemas/match_state.schema.json",
+  "title": "MatchState",
+  "type": "object",
+  "required": ["match_id", "match_clock", "period", "last_seq", "score", "teams", "synthetic"],
+  "properties": {
+    "match_id": { "type": "string" },
+    "match_clock": { "type": "string" },
+    "period": { "type": "integer" },
+    "last_seq": { "type": "integer" },
+    "score": {
+      "type": "object",
+      "required": ["home", "away"],
+      "properties": {
+        "home": { "type": "integer" },
+        "away": { "type": "integer" }
+      }
+    },
+    "home_team_id": { "type": ["string", "null"] },
+    "away_team_id": { "type": ["string", "null"] },
+    "possessing_team_id": { "type": ["string", "null"] },
+    "teams": { "type": "object" },
+    "pressure": { "type": "object" },
+    "rhythm": { "type": "object" },
+    "last_pass_quality": { "type": ["object", "null"] },
+    "synthetic": { "type": "boolean", "const": true }
+  }
+}

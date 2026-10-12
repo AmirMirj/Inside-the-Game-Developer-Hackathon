@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insidethegame.local/schemas/viewer_profile.schema.json",
+  "title": "ViewerProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_id", "role", "language"],
+  "properties": {
+    "profile_id": { "type": "string" },
+    "role": { "type": "string", "enum": ["fan", "analyst", "studio"] },
+    "language": { "type": "string", "description": "BCP-47 language tag" },
+    "favorite_club_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "favorite_player_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "modes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "player_focus": { "type": ["string", "null"] },
+        "metric_focus": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

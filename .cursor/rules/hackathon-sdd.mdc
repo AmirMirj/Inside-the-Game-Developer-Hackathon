@@ -1,0 +1,14 @@
+---
+description: Spec-driven hackathon constraints for Inside the Game
+alwaysApply: true
+---
+
+# Inside the Game — SDD rules
+
+- Follow `SPEC.md`, implement only the next slice in `FEATURES.md`, and keep `ARCHITECTURE.md` accurate.
+- Synthetic football data only — never add real Premier League match data.
+- Preserve the five stages: ingest → interpret → explain → render → personalize.
+- Deterministic code for stats/state; Azure OpenAI / SK agents for explain, narrative, personalize.
+- Studio outputs must be timed (`match_clock`) and structured for overlay/panel rendering.
+- Personalization must change substance (copy, emphasis, focus), not only styling.
+- Do not commit secrets; use `.env.example` as the template.
