@@ -7,8 +7,11 @@ import type {
   StoryBeat,
 } from "./types";
 
-export const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE?.replace(/\/$/, "") || "http://127.0.0.1:8000";
+// Empty string = same-origin (Vercel multi-service). Local default = API on :8000.
+export const API_BASE = (
+  process.env.NEXT_PUBLIC_API_BASE ??
+  (process.env.NODE_ENV === "production" ? "" : "http://127.0.0.1:8000")
+).replace(/\/$/, "");
 
 export const DEFAULT_MATCH_ID =
   process.env.NEXT_PUBLIC_DEFAULT_MATCH_ID || "syn-northbridge-harbor-001";

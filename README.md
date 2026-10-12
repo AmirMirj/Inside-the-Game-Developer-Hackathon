@@ -26,6 +26,18 @@ Microsoft × Premier League hackathon — AI that turns synthetic football event
 4. **Render** timed studio / overlay outputs  
 5. **Personalize** for fan, analyst, and studio modes  
 
+## Deploy on Vercel (multi-service)
+
+This repo uses [Vercel Services](https://vercel.com/docs/services): Next.js UI + FastAPI in one project via root [`vercel.json`](./vercel.json).
+
+1. Push `vercel.json` to `main`.
+2. In Vercel → **Import** `AmirMirj/Inside-the-Game-Developer-Hackathon`.
+3. Keep **Services** / multi-service (do not pick a single folder unless you only want the UI).
+4. Deploy. UI is `/`; API is `/api/v1/...`, `/health`, `/docs`.
+5. Optional env on the project: `AZURE_OPENAI_*` / `EXPLAIN_PROVIDER` for live Azure explain.
+
+**Note:** Long SSE streams can hit serverless limits — for demos use the short match + high stream speed, or **Load replay** / **Prove Fan vs Analyst** / **Generate beats + recap**.
+
 ## Judge quick start
 
 ```bash
